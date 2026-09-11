@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../components/nav";
+import FAQSection from "../components/faq";
+import Footer from "../components/footer";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -276,6 +278,12 @@ export default function ContactSection() {
           </div>
         </section>
       </main>
+
+      {/* FAQ Section */}
+      <FAQSection />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

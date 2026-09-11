@@ -1,6 +1,6 @@
 "use client";
 
-import {
+import React, {
   forwardRef,
   useImperativeHandle,
   useEffect,
@@ -52,12 +52,21 @@ function extendMaterial<T extends THREE.Material = THREE.Material>(
     envMapIntensity?: number;
   };
 
-  if (defaults.color) uniforms.diffuse.value = defaults.color;
-  if ("roughness" in defaults) uniforms.roughness.value = defaults.roughness;
-  if ("metalness" in defaults) uniforms.metalness.value = defaults.metalness;
-  if ("envMap" in defaults) uniforms.envMap.value = defaults.envMap;
-  if ("envMapIntensity" in defaults)
+  if (defaults.color && uniforms.diffuse) {
+    uniforms.diffuse.value = defaults.color;
+  }
+  if ("roughness" in defaults && uniforms.roughness) {
+    uniforms.roughness.value = defaults.roughness;
+  }
+  if ("metalness" in defaults && uniforms.metalness) {
+    uniforms.metalness.value = defaults.metalness;
+  }
+  if ("envMap" in defaults && uniforms.envMap) {
+    uniforms.envMap.value = defaults.envMap;
+  }
+  if ("envMapIntensity" in defaults && uniforms.envMapIntensity) {
     uniforms.envMapIntensity.value = defaults.envMapIntensity;
+  }
 
   Object.entries(cfg.uniforms ?? {}).forEach(([key, u]) => {
     uniforms[key] =
@@ -89,9 +98,15 @@ function extendMaterial<T extends THREE.Material = THREE.Material>(
 }
 
 const CanvasWrapper: FC<{ children: ReactNode }> = ({ children }) => (
-  <Canvas dpr={[1, 2]} frameloop="always" className="w-full h-full relative">
-    {children}
-  </Canvas>
+  <div style={{ width: "100%", height: "100%", position: "absolute", inset: 0 }}>
+    <Canvas
+      dpr={[1, 2]}
+      frameloop="always"
+      style={{ width: "100%", height: "100%", position: "absolute", inset: 0 }}
+    >
+      {children}
+    </Canvas>
+  </div>
 );
 
 const hexToNormalizedRGB = (hex: string): [number, number, number] => {
@@ -153,10 +168,10 @@ float cnoise(vec3 P){
   gy1 -= sz1 * (step(0.0, gy1) - 0.5);
   vec3 g000 = vec3(gx0.x,gy0.x,gz0.x);
   vec3 g100 = vec3(gx0.y,gy0.y,gz0.y);
-  vec3 g010 = vec3(gx0.z,gy0.z,gz0.z);
-  vec3 g110 = vec3(gx0.w,gy0.w,gz0.w);
   vec3 g001 = vec3(gx1.x,gy1.x,gz1.x);
   vec3 g101 = vec3(gx1.y,gy1.y,gz1.y);
+  vec3 g010 = vec3(gx0.z,gy0.z,gz0.z);
+  vec3 g110 = vec3(gx0.w,gy0.w,gz0.w);
   vec3 g011 = vec3(gx1.z,gy1.z,gz1.z);
   vec3 g111 = vec3(gx1.w,gy1.w,gz1.w);
   vec4 norm0 = taylorInvSqrt(vec4(dot(g000,g000),dot(g010,g010),dot(g100,g100),dot(g110,g110)));
@@ -194,16 +209,16 @@ export interface BeamsProps {
 }
 
 const Beams: FC<BeamsProps> = ({
-  beamWidth = 2,
-  beamHeight = 15,
-  beamNumber = 12,
+  beamWidth = 3,
+  beamHeight = 30,
+  beamNumber = 20,
   lightColor = "#ffffff",
   beamColor = "#000000",
   backgroundColor = "#000000",
   speed = 2,
   noiseIntensity = 1.75,
   scale = 0.2,
-  rotation = 0,
+  rotation = 30,
   lightMode = false,
 }) => {
   const meshRef = useRef<THREE.Mesh<THREE.BufferGeometry, THREE.ShaderMaterial>>(null!);
@@ -364,7 +379,14 @@ const MergedPlanes = forwardRef<
     [count, width, height]
   );
   useFrame((_, delta) => {
-    mesh.current.material.uniforms.time.value += 0.1 * delta;
+    if (
+      mesh.current &&
+      mesh.current.material &&
+      mesh.current.material.uniforms &&
+      mesh.current.material.uniforms.time
+    ) {
+      mesh.current.material.uniforms.time.value += 0.1 * delta;
+    }
   });
   return <mesh ref={mesh} geometry={geometry} material={material} />;
 });
@@ -396,25 +418,25 @@ const DirLight: FC<{ position: [number, number, number]; color: string }> = ({
   const dir = useRef<THREE.DirectionalLight>(null!);
   useEffect(() => {
     if (!dir.current) return;
-    const cam = dir.current.shadow.camera as THREE.Camera & {
-      top: number;
-      bottom: number;
-      left: number;
-      right: number;
-      far: number;
-    };
-    cam.top = 24;
-    cam.bottom = -24;
-    cam.left = -24;
-    cam.right = 24;
-    cam.far = 64;
-    dir.current.shadow.bias = -0.004;
+    try {
+      if (dir.current.shadow && dir.current.shadow.camera) {
+        const cam = dir.current.shadow.camera as any;
+        cam.top = 24;
+        cam.bottom = -24;
+        cam.left = -24;
+        cam.right = 24;
+        cam.far = 64;
+        dir.current.shadow.bias = -0.004;
+      }
+    } catch {
+      // ignore shadow camera config if not available
+    }
   }, []);
   return (
     <directionalLight
       ref={dir}
       color={color}
-      intensity={1}
+      intensity={1.2}
       position={position}
     />
   );
