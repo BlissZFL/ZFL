@@ -5,6 +5,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import Navbar from "./components/nav";
+import { Products } from "./components/sanafthings";
 import FAQSection from "./components/faq";
 import Footer from "./components/footer";
 
@@ -681,6 +682,9 @@ export default function Home() {
 
       {/* FAQ Section */}
       <FAQSection />
+
+      {/* Products / Systems Deliverables Section */}
+      <Products />
 
       {/* Footer Section */}
       <Footer />
