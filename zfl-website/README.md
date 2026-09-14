@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ZFL - Bliss ZFL Website
+
+This is the official repository for the ZFL website built with [Next.js](https://nextjs.org).
 
 ## Getting Started
 
