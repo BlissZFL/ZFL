@@ -576,6 +576,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Products & Systems Deliverables Section */}
+      <Products />
+
       {/* Our Process Section */}
       <section
         id="process"
@@ -682,9 +685,6 @@ export default function Home() {
 
       {/* FAQ Section */}
       <FAQSection />
-
-      {/* Products / Systems Deliverables Section */}
-      <Products />
 
       {/* Footer Section */}
       <Footer />
