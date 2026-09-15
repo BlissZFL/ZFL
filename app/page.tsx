@@ -6,9 +6,10 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import Navbar from "./components/nav";
 import { Products } from "./components/sanafthings";
+import ServicesSection from "./components/services";
 import FAQSection from "./components/faq";
 import Footer from "./components/footer";
-import { ArrowRight, Layers, Code, Cpu, Smartphone, Database, Globe } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 // Dynamically import Beams to ensure WebGL/Three.js runs on the client only
 const Beams = dynamic(() => import("./components/Beams"), {
@@ -97,39 +98,6 @@ const processSteps: ProcessStep[] = [
     tag: "LAUNCH",
     description:
       "We test, optimize, deploy and hand over a product built to perform. Post-launch support and iteration keep it moving forward.",
-  },
-];
-
-const techStack = [
-  {
-    category: "Design",
-    icon: Layers,
-    tools: ["Figma", "Framer", "Adobe Creative Cloud"],
-  },
-  {
-    category: "Frontend",
-    icon: Code,
-    tools: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-  },
-  {
-    category: "Backend",
-    icon: Database,
-    tools: ["Node.js", "REST / GraphQL APIs", "PostgreSQL", "Auth0 / Supabase"],
-  },
-  {
-    category: "Mobile",
-    icon: Smartphone,
-    tools: ["React Native", "Flutter", "Native Integrations"],
-  },
-  {
-    category: "AI & Automation",
-    icon: Cpu,
-    tools: ["OpenAI", "Claude", "n8n", "Make", "Custom Neural Agents"],
-  },
-  {
-    category: "Infrastructure",
-    icon: Globe,
-    tools: ["Vercel", "Cloudflare", "AWS", "GitHub Actions", "Analytics"],
   },
 ];
 
@@ -580,10 +548,13 @@ export default function Home() {
       {/* Products & Systems Deliverables Section (Unchanged) */}
       <Products />
 
+      {/* Services Section with Sticky Left Column & 3 Services */}
+      <ServicesSection />
+
       {/* Our Process Section */}
       <section
         id="process"
-        className="w-full bg-[#18181b] text-white py-20 sm:py-28 lg:py-32 px-6 sm:px-10 lg:px-16 font-sans relative overflow-hidden"
+        className="w-full bg-[#18181b] text-white py-20 sm:py-28 lg:py-32 px-6 sm:px-10 lg:px-16 font-sans relative overflow-hidden -mt-10"
       >
         <div className="max-w-8xl mx-auto">
           {/* Top Indicator Header */}
@@ -672,58 +643,6 @@ export default function Home() {
                 );
               })}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Technology / Stack Section (Section 8 of PDF) */}
-      <section
-        id="stack"
-        className="w-full bg-[#0e0e10] text-white py-20 sm:py-28 px-6 sm:px-10 lg:px-16 font-sans border-t border-white/5"
-      >
-        <div className="max-w-8xl mx-auto">
-          <div className="max-w-3xl mb-14 sm:mb-18">
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#FF7300]">
-              TECH STACK & TOOLS
-            </span>
-            <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.12]">
-              Built with tools that <span className="text-[#FF7300]">work together.</span>
-            </h2>
-            <p className="mt-4 text-base sm:text-lg text-neutral-400 leading-relaxed">
-              We choose technology based on the product — not the trend. The goal is a stack that is fast to build, easy to maintain and ready to scale.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {techStack.map((tech) => {
-              const Icon = tech.icon;
-              return (
-                <div
-                  key={tech.category}
-                  className="rounded-2xl border border-white/10 bg-[#161619] p-6 transition-all duration-200 hover:border-white/20 hover:bg-[#1b1b20]"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="h-9 w-9 rounded-xl bg-[#FF7300]/10 border border-[#FF7300]/30 flex items-center justify-center text-[#FF7300]">
-                      <Icon className="h-4 w-4" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-white tracking-tight">
-                      {tech.category}
-                    </h3>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {tech.tools.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-neutral-300 font-mono"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>
