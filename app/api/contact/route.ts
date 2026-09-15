@@ -3,9 +3,8 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   try {
     const data = await request.json();
-    const { name, countryCode, phone, email, service, message } = data;
+    const { name, email, company, message } = data;
 
-    const fullPhone = phone ? `${countryCode || ""} ${phone}`.trim() : "N/A";
     const timestamp = new Date().toLocaleString("en-US", {
       timeZone: "Asia/Kolkata",
     });
@@ -13,9 +12,8 @@ export async function POST(request: Request) {
     const payload = {
       timestamp,
       name: name || "",
-      phone: fullPhone,
       email: email || "",
-      service: service || "General Inquiry",
+      company: company || "",
       message: message || "",
     };
 

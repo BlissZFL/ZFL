@@ -10,39 +10,44 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "How do you ensure our data remains secure?",
+    question: "How long does a website take?",
     answer:
-      "We utilize SOC2-compliant local vector databases and on-premise LLM hosting to ensure your proprietary data never leaves your infrastructure.",
+      "Most marketing websites take around 2–6 weeks depending on scope, content, integrations and feedback cycles. Larger platforms and web apps are planned around their feature set.",
   },
   {
-    question: "What is the typical deployment timeline?",
+    question: "Can you design and develop the entire product?",
     answer:
-      "Most standard agent workflows and integrations deploy within 2 to 4 weeks, with dedicated staging and benchmark evaluations prior to production.",
+      "Yes. We can handle strategy, UX, UI design, development, integrations, QA and launch as one connected process.",
   },
   {
-    question: "Can we integrate with our existing CRM?",
+    question: "Can you work with our existing design or brand?",
     answer:
-      "Yes, we offer native bi-directional connectors for HubSpot, Salesforce, Zoho, Zendesk, and custom internal REST/GraphQL APIs.",
+      "Absolutely. We can extend an existing brand system or build a new digital design language around it.",
   },
   {
-    question: "Do you provide model fine-tuning?",
+    question: "What technologies do you use?",
     answer:
-      "Absolutely. We train domain-adapted LoRA adapters and fine-tune open-weight or proprietary foundational models using your historical datasets.",
+      "We select the stack according to the product requirements. Our common tools include Next.js, React, TypeScript, modern databases, cloud infrastructure and AI/automation platforms.",
   },
   {
-    question: "How do you calculate ROI for automation?",
+    question: "Can you build AI features into our website or app?",
     answer:
-      "We quantify throughput gains, manual hour reduction, error elimination, and customer response latency improvements via real-time dashboard analytics.",
+      "Yes. We can design and implement AI assistants, recommendation systems, workflow automation, internal tools, content systems and custom AI integrations.",
   },
   {
-    question: "Do we own the custom code you build?",
+    question: "Do we own the website and code?",
     answer:
-      "Yes. All bespoke neural pipelines, tooling, and integrations developed for your project are 100% owned by your organization with zero vendor lock-in.",
+      "Yes. Your project assets and bespoke code are delivered to your organization. We avoid unnecessary vendor lock-in.",
   },
   {
-    question: "What models do you specialize in?",
+    question: "Do you provide post-launch support?",
     answer:
-      "We work extensively with Claude 3.7, GPT-4o, DeepSeek, Llama 3, and specialized open-source embeddings and multimodal architectures.",
+      "Yes. We can continue with maintenance, optimization, new features, analytics and ongoing product development.",
+  },
+  {
+    question: "Can you start with an MVP?",
+    answer:
+      "Yes. We can define a focused MVP, launch the essential experience first and build the product in measurable iterations.",
   },
 ];
 
@@ -67,19 +72,19 @@ export default function FAQSection() {
               <span className="flex h-8 w-16 rounded-full border-2 border-[#FF7300]" />
               <div className="h-px w-20 bg-neutral-300" />
               <span className="text-[11px] font-mono font-semibold tracking-widest text-neutral-500 uppercase">
-                COMMON QUERIES
+                FAQ // COMMON QUESTIONS
               </span>
             </div>
 
             {/* Description */}
             <p className="mt-8 text-sm sm:text-base text-neutral-600 leading-relaxed max-w-md">
-              Find answers to technical specifications, deployment timelines, and
-              our data security protocols.
+              Find answers to timelines, full-stack product capabilities, tech
+              stack, code ownership and post-launch support.
             </p>
 
             {/* Main Headline */}
             <h2 className="mt-8 sm:mt-4 text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-950 leading-[1.08]">
-              Everything you need to know about our AI.
+              Everything you need to know.
             </h2>
           </div>
 
@@ -114,7 +119,7 @@ export default function FAQSection() {
 
               {/* Right Label */}
               <span className="flex h-11 items-center justify-center rounded-xl bg-[#FF7300] px-7 text-sm font-semibold text-black transition-colors">
-                Contact Support
+                Start a Project
               </span>
             </Link>
           </div>

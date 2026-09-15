@@ -8,6 +8,7 @@ import Navbar from "./components/nav";
 import { Products } from "./components/sanafthings";
 import FAQSection from "./components/faq";
 import Footer from "./components/footer";
+import { ArrowRight, Layers, Code, Cpu, Smartphone, Database, Globe } from "lucide-react";
 
 // Dynamically import Beams to ensure WebGL/Three.js runs on the client only
 const Beams = dynamic(() => import("./components/Beams"), {
@@ -71,31 +72,64 @@ interface ProcessStep {
 const processSteps: ProcessStep[] = [
   {
     step: "// 01",
-    title: "Comprehensive Strategic Audit",
-    tag: "AUDIT",
+    title: "Strategic Discovery",
+    tag: "DISCOVER",
     description:
-      "We perform a deep-layer analysis of your current technical stack and fragmented data silos to identify high-impact AI opportunities that align with your core business objectives and ROI targets.",
+      "We understand your business, users, goals, existing product and technical requirements. We define what needs to be built — and what does not.",
   },
   {
     step: "// 02",
-    title: "Custom Architecture Design",
+    title: "Experience & Interface Design",
     tag: "DESIGN",
     description:
-      "We engineer tailored neural pipelines, local vector databases, and multi-agent coordination architectures built for extreme throughput, fault tolerance, and absolute privacy.",
+      "We map the user journey, create the structure, develop the visual direction and turn it into a scalable design system.",
   },
   {
     step: "// 03",
-    title: "Rapid Prototype Development",
-    tag: "PROTOTYPE",
+    title: "Rapid Product Development",
+    tag: "BUILD",
     description:
-      "Iterative 14-day sprint cycles deploying functional agent sandboxes to validate edge-case reasoning, tool-use execution, and sub-second model latency benchmarks.",
+      "We turn approved designs into production-ready websites, web apps, mobile products and connected systems using the right technology for the job.",
   },
   {
     step: "// 04",
-    title: "Enterprise Scale Deployment",
-    tag: "DEPLOY",
+    title: "Deployment & Growth",
+    tag: "LAUNCH",
     description:
-      "Seamless production deployment with continuous automated evaluation benchmarks, real-time guardrail security monitors, and SOC2 compliance validation.",
+      "We test, optimize, deploy and hand over a product built to perform. Post-launch support and iteration keep it moving forward.",
+  },
+];
+
+const techStack = [
+  {
+    category: "Design",
+    icon: Layers,
+    tools: ["Figma", "Framer", "Adobe Creative Cloud"],
+  },
+  {
+    category: "Frontend",
+    icon: Code,
+    tools: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    category: "Backend",
+    icon: Database,
+    tools: ["Node.js", "REST / GraphQL APIs", "PostgreSQL", "Auth0 / Supabase"],
+  },
+  {
+    category: "Mobile",
+    icon: Smartphone,
+    tools: ["React Native", "Flutter", "Native Integrations"],
+  },
+  {
+    category: "AI & Automation",
+    icon: Cpu,
+    tools: ["OpenAI", "Claude", "n8n", "Make", "Custom Neural Agents"],
+  },
+  {
+    category: "Infrastructure",
+    icon: Globe,
+    tools: ["Vercel", "Cloudflare", "AWS", "GitHub Actions", "Analytics"],
   },
 ];
 
@@ -108,7 +142,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative flex h-screen min-h-[640px] w-full flex-col justify-center overflow-hidden px-6 sm:px-10 lg:px-16 pt-16">
+      <section className="relative flex min-h-screen w-full flex-col justify-center overflow-hidden px-6 sm:px-10 lg:px-16 pt-24 pb-16">
         {/* Background 3D Beams Container */}
         <div className="absolute inset-0 z-0 h-full w-full pointer-events-none">
           <Beams
@@ -129,31 +163,39 @@ export default function Home() {
         <div className="relative z-10 max-w-8xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Text & CTA */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
+            {/* Eyebrow */}
+            <div className="text-xs font-mono uppercase tracking-[0.25em] text-[#FF7300] mb-3">
+              DIGITAL PRODUCTS // WEB // APP // AI
+            </div>
+
             {/* Main Title */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl tracking-tight leading-[1.05]">
               <span className="block font-normal text-neutral-400">
-                Scale your ideas.
+                Turn ideas into
               </span>
               <span className="block font-medium text-white mt-1 sm:mt-2">
-                Build with AI.
+                digital products.
               </span>
             </h1>
 
-            {/* Subtitle */}
-            <p className="mt-6 max-w-lg text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">
-              Deploy custom neural agents, LLMs, and automation in one seamless
-              flow.
+            {/* Tagline */}
+            <p className="mt-4 text-lg sm:text-xl font-medium text-white/90">
+              Design fast. Build right. Scale without friction.
             </p>
 
-            {/* CTA Button */}
-            <div className="mt-10 sm:mt-12">
+            {/* Subtitle */}
+            <p className="mt-3 max-w-xl text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">
+              We design and develop high-performance websites, web apps, mobile experiences, AI systems and automation that help ambitious businesses launch, grow and operate better.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4">
               <Link
                 href="/contact"
                 className="group inline-flex items-center overflow-hidden rounded-2xl border border-neutral-300/30 bg-white/10 p-1 shadow-lg backdrop-blur-md transition-all hover:border-white/40 hover:bg-white/15 active:scale-[0.98]"
               >
                 {/* Left Pixel Icon Box */}
                 <span className="flex h-11 w-12 items-center justify-center rounded-xl bg-[#FF7300] text-neutral-950 shadow-sm transition-transform group-hover:scale-105">
-                  {/* Pixelated Double Chevron Icon */}
                   <svg
                     width="14"
                     height="14"
@@ -177,15 +219,28 @@ export default function Home() {
 
                 {/* Right Label */}
                 <span className="flex h-11 items-center justify-center rounded-xl bg-[#18181b] px-7 text-sm font-semibold text-white transition-colors group-hover:bg-neutral-900">
-                  Start Build
+                  Start a Build
                 </span>
+              </Link>
+
+              <Link
+                href="/#works"
+                className="inline-flex items-center gap-2 rounded-2xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-medium text-neutral-200 transition-all hover:bg-white/10 hover:text-white"
+              >
+                View Our Work
+                <ArrowRight className="h-4 w-4 text-neutral-400" />
               </Link>
             </div>
 
-            {/* Deployments & Trust Line */}
-            <p className="mt-8 text-xs sm:text-sm text-neutral-400 font-normal leading-relaxed max-w-sm">
-              +2,400 active deployments and 8,200 brands trust our high-performance architecture.
-            </p>
+            {/* Proof Strip */}
+            <div className="mt-8 pt-6 border-t border-white/10 w-full max-w-xl">
+              <p className="text-xs sm:text-sm font-mono text-neutral-300 font-medium">
+                Strategy → Design → Development → Launch → Scale
+              </p>
+              <p className="mt-1 text-xs text-neutral-400">
+                One team from first idea to production.
+              </p>
+            </div>
           </div>
 
           {/* Right Column: Floating Digital Brain Card */}
@@ -206,7 +261,7 @@ export default function Home() {
                     <span className="h-1.5 w-1.5 rounded-full bg-[#FF7300] animate-ping" />
                     NAVBOX // 0.1
                   </span>
-                  <span className="text-neutral-500">QUANTUM ENGINE</span>
+                  <span className="text-neutral-500">DIGITAL PRODUCT ENGINE</span>
                 </div>
 
                 {/* Futuristic Core Wireframe Animation Graphic */}
@@ -230,7 +285,7 @@ export default function Home() {
 
                     {/* Data indicators */}
                     <div className="absolute bottom-2 left-3 text-[9px] font-mono text-neutral-400">
-                      98.4 GFLOPS
+                      STACK // REACT 19
                     </div>
                     <div className="absolute top-2 right-3 text-[9px] font-mono text-[#FF7300]">
                       LIVE
@@ -249,10 +304,10 @@ export default function Home() {
               <div className="flex items-center justify-between px-2 pt-4 pb-1">
                 <div>
                   <h3 className="text-base font-semibold text-white tracking-tight">
-                    Digital Brain
+                    Product Architecture
                   </h3>
                   <p className="text-xs font-mono text-white/65 mt-0.5">
-                    // Model v4.0.2
+                    // Web · Apps · AI Automations
                   </p>
                 </div>
 
@@ -284,7 +339,7 @@ export default function Home() {
         className="w-full overflow-hidden bg-[#f8f8fa] pt-14 sm:pt-20 lg:pt-24 pb-12 sm:pb-16 font-sans text-neutral-900"
       >
         {/* Running Wheel Marquee Header */}
-        <div className="relative flex w-full overflow-hidden select-none mb-14 sm:mb-20">
+        <div className="relative flex w-full overflow-hidden select-none mb-10 sm:mb-16">
           {/* Repeating Track */}
           <div className="flex w-max shrink-0 items-center gap-8 sm:gap-14 lg:gap-20 animate-marquee-left will-change-transform">
             {marqueeItems.map((text, i) => (
@@ -319,255 +374,201 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Section Intro Copy */}
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 mb-12 sm:mb-16">
+         
+          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 leading-[1.12]">
+            Built for real businesses. <span className="text-[#FF7300]">Designed for real users.</span>
+          </h2>
+          <p className="mt-3.5 text-neutral-600 text-base sm:text-lg max-w-3xl leading-relaxed">
+            A selection of digital experiences we design and build — from conversion-focused websites to complex web applications and AI-powered products.
+          </p>
+        </div>
+
         {/* Project Cards 3-Column Grid */}
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 items-start">
-            {/* Project Card 1: Cigna Healthcare */}
+            {/* Project Card 1: SaaS / B2B */}
             <div className="flex flex-col group">
-              {/* Top Card Hero / Logo Container */}
               <div className="relative flex h-72 sm:h-80 w-full flex-col justify-between rounded-[28px] border border-neutral-200/80 bg-white p-6 sm:p-7 shadow-[0_2px_12px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-[0_16px_36px_rgba(0,0,0,0.06)] hover:border-neutral-300">
-                {/* Category Badge */}
                 <div className="self-start rounded-full border border-neutral-200/90 bg-white px-3.5 py-1 text-[10px] sm:text-[11px] font-mono font-medium tracking-wider text-neutral-600 uppercase">
-                  HEALTHCARE AI
+                  WORK 01 // SAAS / B2B
                 </div>
 
-                {/* Centered Brand Logo */}
-                <div className="my-auto flex items-center justify-center">
-                  <div className="flex flex-col items-center gap-1 text-neutral-900">
-                    <svg
-                      className="h-10 w-10 text-neutral-900"
-                      viewBox="0 0 40 40"
-                      fill="currentColor"
-                    >
-                      {/* Cigna Tree / Bloom Leaves and Branches */}
-                      <circle cx="20" cy="8" r="2.2" />
-                      <circle cx="15" cy="11" r="2" />
-                      <circle cx="25" cy="11" r="2" />
-                      <circle cx="11" cy="16" r="1.8" />
-                      <circle cx="29" cy="16" r="1.8" />
-                      <circle cx="9" cy="22" r="1.6" />
-                      <circle cx="31" cy="22" r="1.6" />
-                      <path d="M19 14h2v12h-2z" />
-                      <path
-                        d="M15 19c2-1 3.5-3 4-6"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                        fill="none"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M25 19c-2-1-3.5-3-4-6"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                        fill="none"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M11 23c3-1 5.5-4 7-9"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        fill="none"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M29 23c-3-1-5.5-4-7-9"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        fill="none"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                    <div className="flex flex-col items-center">
-                      <span className="text-2xl sm:text-[26px] font-extrabold tracking-tight text-neutral-900 leading-none">
-                        cigna
-                      </span>
-                      <span className="text-[10px] font-medium tracking-wide text-neutral-500 lowercase mt-0.5">
-                        healthcare
-                      </span>
-                    </div>
-                  </div>
+                <div className="my-auto flex flex-col items-center text-center">
+                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900">
+                    Website + Product Design
+                  </h3>
+                  <p className="text-xs sm:text-sm text-neutral-500 mt-2 max-w-xs leading-relaxed">
+                    Sharper positioning, clearer UX, higher-intent conversion.
+                  </p>
                 </div>
 
-                {/* Bottom Spacer */}
-                <div className="h-2" />
+                <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400 border-t border-neutral-100 pt-3">
+                  <span>POSITIONING</span>
+                  <span className="text-[#FF7300] font-semibold">PRODUCTION READY</span>
+                </div>
               </div>
 
-              {/* Bottom 2x2 Stats Grid */}
+              {/* Bottom 2x2 Highlights Grid */}
               <div className="mt-2.5 grid grid-cols-2 gap-2.5">
-                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-colors hover:bg-neutral-50/50">
-                  <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                    $45M+
+                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                  <span className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900">
+                    High Intent
                   </span>
-                  <span className="mt-1 text-xs font-normal text-neutral-500">
-                    Funds raised
-                  </span>
-                </div>
-
-                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-colors hover:bg-neutral-50/50">
-                  <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                    700%
-                  </span>
-                  <span className="mt-1 text-xs font-normal text-neutral-500">
-                    Social growth
+                  <span className="mt-1 text-xs text-neutral-500">
+                    Conversion Architecture
                   </span>
                 </div>
 
-                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-colors hover:bg-neutral-50/50">
-                  <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                    41x
+                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                  <span className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900">
+                    Clearer UX
                   </span>
-                  <span className="mt-1 text-xs font-normal text-neutral-500">
-                    ATH ROI
+                  <span className="mt-1 text-xs text-neutral-500">
+                    Scalable Design System
                   </span>
                 </div>
 
-                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-colors hover:bg-neutral-50/50">
-                  <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                    84
+                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                  <span className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900">
+                    CMS Ready
                   </span>
-                  <span className="mt-1 text-xs font-normal text-neutral-500">
-                    Partnerships
+                  <span className="mt-1 text-xs text-neutral-500">
+                    Marketing Autonomy
+                  </span>
+                </div>
+
+                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                  <span className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900">
+                    Sub-second
+                  </span>
+                  <span className="mt-1 text-xs text-neutral-500">
+                    Lighthouse Speed
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Project Card 2: Aetna */}
+            {/* Project Card 2: Fintech / Finance */}
             <div className="flex flex-col group">
-              {/* Top Card Hero / Logo Container */}
               <div className="relative flex h-72 sm:h-80 w-full flex-col justify-between rounded-[28px] border border-neutral-200/80 bg-white p-6 sm:p-7 shadow-[0_2px_12px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-[0_16px_36px_rgba(0,0,0,0.06)] hover:border-neutral-300">
-                {/* Category Badge */}
                 <div className="self-start rounded-full border border-neutral-200/90 bg-white px-3.5 py-1 text-[10px] sm:text-[11px] font-mono font-medium tracking-wider text-neutral-600 uppercase">
-                  HEALTHCARE
+                  WORK 02 // FINTECH / FINANCE
                 </div>
 
-                {/* Centered Brand Logo */}
-                <div className="my-auto flex items-center justify-center">
-                  <div className="flex items-center gap-2.5 text-neutral-900">
-                    <svg
-                      className="h-7 w-7 text-neutral-900 fill-current shrink-0"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                    </svg>
-                    <span className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900">
-                      aetna<span className="text-sm font-normal align-top ml-0.5">®</span>
-                    </span>
-                  </div>
+                <div className="my-auto flex flex-col items-center text-center">
+                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900">
+                    Web App Experience
+                  </h3>
+                  <p className="text-xs sm:text-sm text-neutral-500 mt-2 max-w-xs leading-relaxed">
+                    Complex workflows simplified into a clean product experience.
+                  </p>
                 </div>
 
-                {/* Bottom Spacer */}
-                <div className="h-2" />
+                <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400 border-t border-neutral-100 pt-3">
+                  <span>DASHBOARD</span>
+                  <span className="text-[#FF7300] font-semibold">CUSTOM APIS</span>
+                </div>
               </div>
 
-              {/* Bottom 2x2 Stats Grid */}
+              {/* Bottom 2x2 Highlights Grid */}
               <div className="mt-2.5 grid grid-cols-2 gap-2.5">
-                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-colors hover:bg-neutral-50/50">
-                  <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                    $62M+
+                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                  <span className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900">
+                    Fast Flows
                   </span>
-                  <span className="mt-1 text-xs font-normal text-neutral-500">
-                    Funds raised
-                  </span>
-                </div>
-
-                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-colors hover:bg-neutral-50/50">
-                  <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                    450%
-                  </span>
-                  <span className="mt-1 text-xs font-normal text-neutral-500">
-                    Social growth
+                  <span className="mt-1 text-xs text-neutral-500">
+                    Intuitive Navigation
                   </span>
                 </div>
 
-                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-colors hover:bg-neutral-50/50">
-                  <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                    32x
+                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                  <span className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900">
+                    Multi-state
                   </span>
-                  <span className="mt-1 text-xs font-normal text-neutral-500">
-                    ATH ROI
+                  <span className="mt-1 text-xs text-neutral-500">
+                    Interaction System
                   </span>
                 </div>
 
-                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-colors hover:bg-neutral-50/50">
-                  <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                    91
+                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                  <span className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900">
+                    Clean Auth
                   </span>
-                  <span className="mt-1 text-xs font-normal text-neutral-500">
-                    Partnerships
+                  <span className="mt-1 text-xs text-neutral-500">
+                    Role-Based Access
+                  </span>
+                </div>
+
+                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                  <span className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900">
+                    Real-time
+                  </span>
+                  <span className="mt-1 text-xs text-neutral-500">
+                    Data Telemetry
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Project Card 3: Anthem */}
+            {/* Project Card 3: Healthcare */}
             <div className="flex flex-col group">
-              {/* Top Card Hero / Logo Container */}
               <div className="relative flex h-72 sm:h-80 w-full flex-col justify-between rounded-[28px] border border-neutral-200/80 bg-white p-6 sm:p-7 shadow-[0_2px_12px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-[0_16px_36px_rgba(0,0,0,0.06)] hover:border-neutral-300">
-                {/* Category Badge */}
                 <div className="self-start rounded-full border border-neutral-200/90 bg-white px-3.5 py-1 text-[10px] sm:text-[11px] font-mono font-medium tracking-wider text-neutral-600 uppercase">
-                  HEALTHCARE
+                  WORK 03 // HEALTHCARE
                 </div>
 
-                {/* Centered Brand Logo */}
-                <div className="my-auto flex items-center justify-center">
-                  <div className="flex items-center gap-2 text-neutral-900">
-                    <span className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900">
-                      Anthem.
-                    </span>
-                    <div className="flex items-center gap-1.5 ml-0.5">
-                      <span className="flex h-5 w-5 items-center justify-center rounded-[4px] bg-neutral-900 text-xs font-black text-white leading-none">
-                        +
-                      </span>
-                      <svg
-                        className="h-6 w-6 text-neutral-900 fill-current shrink-0"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z" />
-                      </svg>
-                    </div>
-                  </div>
+                <div className="my-auto flex flex-col items-center text-center">
+                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900">
+                    Website + Booking
+                  </h3>
+                  <p className="text-xs sm:text-sm text-neutral-500 mt-2 max-w-xs leading-relaxed">
+                    Trust-first design with frictionless user journeys.
+                  </p>
                 </div>
 
-                {/* Bottom Spacer */}
-                <div className="h-2" />
+                <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400 border-t border-neutral-100 pt-3">
+                  <span>BOOKING ENGINE</span>
+                  <span className="text-[#FF7300] font-semibold">HIPAA READY</span>
+                </div>
               </div>
 
-              {/* Bottom 2x2 Stats Grid */}
+              {/* Bottom 2x2 Highlights Grid */}
               <div className="mt-2.5 grid grid-cols-2 gap-2.5">
-                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-colors hover:bg-neutral-50/50">
-                  <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                    $82M+
+                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                  <span className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900">
+                    Trust First
                   </span>
-                  <span className="mt-1 text-xs font-normal text-neutral-500">
-                    Funds raised
-                  </span>
-                </div>
-
-                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-colors hover:bg-neutral-50/50">
-                  <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                    340%
-                  </span>
-                  <span className="mt-1 text-xs font-normal text-neutral-500">
-                    Social growth
+                  <span className="mt-1 text-xs text-neutral-500">
+                    Patient Experience
                   </span>
                 </div>
 
-                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-colors hover:bg-neutral-50/50">
-                  <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                    19x
+                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                  <span className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900">
+                    0-Friction
                   </span>
-                  <span className="mt-1 text-xs font-normal text-neutral-500">
-                    ATH ROI
+                  <span className="mt-1 text-xs text-neutral-500">
+                    Instant Scheduling
                   </span>
                 </div>
 
-                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-colors hover:bg-neutral-50/50">
-                  <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                    56
+                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                  <span className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900">
+                    Responsive
                   </span>
-                  <span className="mt-1 text-xs font-normal text-neutral-500">
-                    Partnerships
+                  <span className="mt-1 text-xs text-neutral-500">
+                    Mobile First Layout
+                  </span>
+                </div>
+
+                <div className="flex flex-col justify-center rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                  <span className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900">
+                    Secure
+                  </span>
+                  <span className="mt-1 text-xs text-neutral-500">
+                    Encrypted Pipeline
                   </span>
                 </div>
               </div>
@@ -576,20 +577,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Products & Systems Deliverables Section */}
+      {/* Products & Systems Deliverables Section (Unchanged) */}
       <Products />
 
       {/* Our Process Section */}
       <section
         id="process"
-        className="w-full bg-[#242424] text-white py-20 sm:py-28 lg:py-32 px-6 sm:px-10 lg:px-16 font-sans relative overflow-hidden"
+        className="w-full bg-[#18181b] text-white py-20 sm:py-28 lg:py-32 px-6 sm:px-10 lg:px-16 font-sans relative overflow-hidden"
       >
         <div className="max-w-8xl mx-auto">
           {/* Top Indicator Header */}
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-4">
               <span className="text-[11px] font-mono font-semibold tracking-widest text-neutral-300 uppercase">
-                OUR PROCESS
+                OUR PROCESS 
               </span>
               <div className="h-px w-14 sm:w-302 bg-neutral-600/80" />
             </div>
@@ -599,33 +600,28 @@ export default function Home() {
           </div>
 
           {/* Section Main Headline */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white leading-[1.12] max-w-4xl mb-14 sm:mb-20">
-            From raw data to refined intelligence. Our iterative deployment cycle.
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white leading-[1.12] max-w-4xl mb-6">
+            From raw idea to refined product. Our build cycle.
           </h2>
+          <p className="text-neutral-400 text-base sm:text-lg max-w-2xl mb-14 sm:mb-20 leading-relaxed">
+            A clear process keeps projects moving without the usual agency chaos. You know what is happening, what is next and what you are getting.
+          </p>
 
           {/* Main 2-Column Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
             {/* Left Column: Our Process Image Card */}
-            <div className="lg:col-span-5 relative flex flex-col justify-between rounded-3xl border border-white/10 bg-[#1a1a1c] p-5 sm:p-6 min-h-[380px] sm:min-h-[440px] shadow-2xl group overflow-hidden">
-              {/* Image Container with object-contain for full clarity */}
+            <div className="lg:col-span-5 relative flex flex-col justify-between rounded-3xl border border-white/10 bg-[#141416] p-5 sm:p-6 min-h-[380px] sm:min-h-[440px] shadow-2xl group overflow-hidden">
               <div className="relative w-full flex-1 min-h-[280px] sm:min-h-[340px] flex items-center justify-center p-4">
                 <Image
                   src="/ourprocess.jpg"
                   alt="Our Process"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-contain object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="object-contain object-center transition-transform duration-500"
                 />
               </div>
 
-              {/* Bottom Card Telemetry */}
-              <div className="relative z-10 flex items-center justify-between text-[11px] font-mono text-neutral-400 border-t border-white/10 pt-4 mt-2">
-                <span className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-[#FF7300] animate-pulse" />
-                  NEURAL STACK // v4.2
-                </span>
-                <span>SOC-2 CERTIFIED</span>
-              </div>
+              
             </div>
 
             {/* Right Column: Interactive Process Step Rows */}
@@ -640,8 +636,8 @@ export default function Home() {
                     }
                     className={`rounded-2xl border transition-all duration-300 p-5 sm:p-6 cursor-pointer select-none ${
                       isOpen
-                        ? "border-white/20 bg-[#1d1d1f] shadow-lg"
-                        : "border-white/5 bg-[#1a1a1c] hover:bg-[#1e1e20] hover:border-white/10"
+                        ? "border-white/20 bg-[#222226] shadow-lg"
+                        : "border-white/5 bg-[#141416] hover:bg-[#1a1a1e] hover:border-white/10"
                     }`}
                   >
                     {/* Row Header */}
@@ -655,10 +651,7 @@ export default function Home() {
                         </h3>
                       </div>
 
-                      {/* Right Tag Pill */}
-                      <span className="rounded-full bg-white px-3 py-1 text-[10px] sm:text-[11px] font-mono font-semibold tracking-wider text-neutral-900 uppercase shrink-0 shadow-sm">
-                        {step.tag}
-                      </span>
+                      
                     </div>
 
                     {/* Smooth Collapsible Description */}
@@ -679,6 +672,58 @@ export default function Home() {
                 );
               })}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technology / Stack Section (Section 8 of PDF) */}
+      <section
+        id="stack"
+        className="w-full bg-[#0e0e10] text-white py-20 sm:py-28 px-6 sm:px-10 lg:px-16 font-sans border-t border-white/5"
+      >
+        <div className="max-w-8xl mx-auto">
+          <div className="max-w-3xl mb-14 sm:mb-18">
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#FF7300]">
+              TECH STACK & TOOLS
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.12]">
+              Built with tools that <span className="text-[#FF7300]">work together.</span>
+            </h2>
+            <p className="mt-4 text-base sm:text-lg text-neutral-400 leading-relaxed">
+              We choose technology based on the product — not the trend. The goal is a stack that is fast to build, easy to maintain and ready to scale.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {techStack.map((tech) => {
+              const Icon = tech.icon;
+              return (
+                <div
+                  key={tech.category}
+                  className="rounded-2xl border border-white/10 bg-[#161619] p-6 transition-all duration-200 hover:border-white/20 hover:bg-[#1b1b20]"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="h-9 w-9 rounded-xl bg-[#FF7300]/10 border border-[#FF7300]/30 flex items-center justify-center text-[#FF7300]">
+                      <Icon className="h-4 w-4" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-white tracking-tight">
+                      {tech.category}
+                    </h3>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {tech.tools.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-neutral-300 font-mono"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

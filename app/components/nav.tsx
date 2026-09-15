@@ -11,15 +11,13 @@ interface NavItem {
 const desktopNavItems: NavItem[] = [
   { label: "Works", href: "/#works" },
   { label: "Services", href: "/#services" },
-  { label: "About", href: "/#about" },
+  
 ];
 
 const mobileNavItems: NavItem[] = [
   { label: "Works", href: "/#works" },
   { label: "Services", href: "/#services" },
-  { label: "Insights", href: "/#insights" },
-  { label: "Pricing", href: "/#pricing" },
-  { label: "Company", href: "/#about" },
+  
 ];
 
 function BrandLogo({ className = "h-4 w-auto" }: { className?: string }) {
@@ -116,7 +114,7 @@ export default function Navbar() {
           </span>
 
           <span className="pr-3 text-xs sm:text-sm font-medium text-neutral-900">
-            Hire Team
+            Start a Project
           </span>
         </Link>
       </div>
@@ -221,7 +219,7 @@ export default function Navbar() {
 
               {/* Centered Label */}
               <span className="flex-1 text-center text-sm font-semibold tracking-tight text-white pr-4">
-                Hire Team
+                Start a Project
               </span>
             </Link>
           </div>
