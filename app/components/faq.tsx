@@ -51,6 +51,19 @@ const faqs: FAQItem[] = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -63,6 +76,12 @@ export default function FAQSection() {
       id="faq"
       className="w-full bg-[#f8f8fa] text-neutral-900 py-16 sm:py-24 px-4 sm:px-8 lg:px-12 font-sans"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
       <div className="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         {/* Left Column (Sticky info & CTA) */}
         <div className="lg:col-span-5 flex flex-col justify-between h-full lg:sticky lg:top-28">

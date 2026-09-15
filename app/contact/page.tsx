@@ -2,9 +2,20 @@ import ContactSection from "./contact";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us - ZeroFrictionLab | Web & App Design + Development",
+  title: "Start a Project | ZeroFrictionLab",
   description:
-    "Let's build something worth using. Have a website, app, product or automation in mind? Tell us what you are building.",
+    "Tell us what you're building, where you're stuck and what success looks like. We'll help turn the idea into a clear next step.",
+  alternates: {
+    canonical: "https://www.zerofrictionlab.com/contact",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "ZeroFrictionLab",
+    title: "Start a Project | ZeroFrictionLab",
+    description:
+      "Tell us what you're building, where you're stuck and what success looks like. We'll help turn the idea into a clear next step.",
+    url: "https://www.zerofrictionlab.com/contact",
+  },
 };
 
 export default function ContactPage() {

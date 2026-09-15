@@ -54,8 +54,57 @@ const squarePeg = Square_Peg({
 });
 
 export const metadata: Metadata = {
-  title: "ZFL",
-  description: "ZFL Website",
+  metadataBase: new URL("https://www.zerofrictionlab.com"),
+  title: "Web Design & Development Agency | ZeroFrictionLab",
+  description:
+    "ZeroFrictionLab designs and develops high-performance websites, web apps, mobile products, AI systems and automation for ambitious businesses.",
+  alternates: {
+    canonical: "https://www.zerofrictionlab.com/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: "website",
+    siteName: "ZeroFrictionLab",
+    title: "Web Design, Development & Digital Products | ZeroFrictionLab",
+    description:
+      "Websites, web apps, mobile products, UI/UX, AI and automation — designed and built by one product team.",
+    url: "https://www.zerofrictionlab.com/",
+    images: [
+      {
+        url: "https://www.zerofrictionlab.com/og/home.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ZeroFrictionLab - Digital Product Design & Development",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Design, Development & Digital Products | ZeroFrictionLab",
+    description:
+      "Websites, web apps, mobile products, UI/UX, AI and automation — designed and built by one product team.",
+    images: ["https://www.zerofrictionlab.com/og/home.jpg"],
+  },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.zerofrictionlab.com/#organization",
+  name: "ZeroFrictionLab",
+  url: "https://www.zerofrictionlab.com/",
+  logo: "https://www.zerofrictionlab.com/logo.png",
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.zerofrictionlab.com/#website",
+  name: "ZeroFrictionLab",
+  url: "https://www.zerofrictionlab.com/",
 };
 
 export default function RootLayout({
@@ -68,8 +117,21 @@ export default function RootLayout({
       lang="en"
       className={`${plusJakartaSans.variable} ${fraunces.variable} ${geist.variable} ${montserrat.variable} ${outfit.variable} ${sourceSerif4.variable} ${squarePeg.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );
 }
-

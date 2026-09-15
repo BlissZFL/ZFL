@@ -171,10 +171,10 @@ export default function Home() {
             {/* Main Title */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl tracking-tight leading-[1.05]">
               <span className="block font-normal text-neutral-400">
-                Turn ideas into
+                We design and build
               </span>
               <span className="block font-medium text-white mt-1 sm:mt-2">
-                digital products.
+                digital products that move businesses forward.
               </span>
             </h1>
 
@@ -614,7 +614,7 @@ export default function Home() {
               <div className="relative w-full flex-1 min-h-[280px] sm:min-h-[340px] flex items-center justify-center p-4">
                 <Image
                   src="/ourprocess.jpg"
-                  alt="Our Process"
+                  alt="ZeroFrictionLab 4-step digital product development process"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-contain object-center transition-transform duration-500"
