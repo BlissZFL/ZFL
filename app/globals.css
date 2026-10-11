@@ -8,14 +8,19 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-plus-jakarta-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-jakarta: var(--font-plus-jakarta-sans), sans-serif;
-  --font-fraunces: var(--font-fraunces), serif;
-  --font-geist: var(--font-geist), sans-serif;
-  --font-montserrat: var(--font-montserrat), sans-serif;
-  --font-outfit: var(--font-outfit), sans-serif;
-  --font-source-serif: var(--font-source-serif-4), serif;
-  --font-square-peg: var(--font-square-peg), cursive;
+  --font-sans: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --font-fraunces: 'Fraunces', serif;
+  --font-geist: 'Geist', sans-serif;
+  --font-gochi: 'Gochi Hand', cursive;
+  --font-manrope: 'Manrope', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-parisienne: 'Parisienne', cursive;
+  --font-playfair: 'Playfair Display', serif;
+  --font-source-serif: 'Source Serif 4', serif;
+  --font-square-peg: 'Square Peg', cursive;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,5 +61,3 @@ body {
 .animate-roll-left {
   animation: roll-left 3s linear infinite;
 }
-
-
