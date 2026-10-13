@@ -7,7 +7,7 @@ interface CalendlySectionProps {
 }
 
 export default function CalendlySection({
-  calendlyUrl = "https://calendly.com",
+  calendlyUrl = "https://cal.com/sanaf-suhail/discoverycall",
 }: CalendlySectionProps) {
   // Calendar state for month navigation
   const [currentDate, setCurrentDate] = useState(() => new Date(2026, 9, 1)); // October 2026
@@ -255,17 +255,14 @@ export default function CalendlySection({
                     );
                   }
 
-                  // Non-available / Weekend days
+                  // Non-available / Weekend days — not clickable
                   return (
-                    <button
+                    <div
                       key={day}
-                      type="button"
-                      onClick={() => handleDateClick(day)}
-                      className="aspect-square text-neutral-600 font-normal text-xs sm:text-sm flex items-center justify-center hover:text-neutral-400 transition-colors cursor-pointer"
-                      title={`${monthNames[month]} ${day}`}
+                      className="aspect-square text-neutral-600 font-normal text-xs sm:text-sm flex items-center justify-center cursor-default select-none"
                     >
                       {day}
-                    </button>
+                    </div>
                   );
                 })}
               </div>
