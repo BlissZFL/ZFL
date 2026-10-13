@@ -132,7 +132,7 @@ export default function HeroSection() {
               {/* CTA Buttons */}
               <div className="mt-8 flex flex-wrap items-center gap-3.5 sm:gap-4">
                 <Link
-                  href="#contact"
+                  href="https://cal.com/sanaf-suhail/discoverycall"
                   className="group inline-flex items-center gap-2 bg-white px-6 py-3 text-sm font-medium text-black shadow-lg transition-all duration-200 active:scale-95"
                 >
                   <span>Book a 15-min call</span>

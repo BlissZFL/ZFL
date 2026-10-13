@@ -23,7 +23,7 @@ const processSteps: ProcessStep[] = [
       "Workshops, UX flows and a clickable prototype, so everyone can see and test the product before it's built.",
     timeline: "Weeks 1 – 2",
     ctaText: "Book a call",
-    ctaHref: "#contact",
+    ctaHref: "https://cal.com/sanaf-suhail/discoverycall",
     features: [
       "Problem, users and must-have features mapped",
       "User flows and wireframes for the core journey",
@@ -39,7 +39,7 @@ const processSteps: ProcessStep[] = [
       "We design the full product and build the MVP, with a live demo every single week until launch.",
     timeline: "Weeks 3 – 8",
     ctaText: "Start a build",
-    ctaHref: "#contact",
+    ctaHref: "https://cal.com/sanaf-suhail/discoverycall",
     features: [
       "High-fidelity UI and a design system",
       "MVP, web app or dashboard, built to ship",
@@ -55,7 +55,7 @@ const processSteps: ProcessStep[] = [
       "After launch we stay on as your tech partner: new features, growth experiments and the stack behind it.",
     timeline: "After launch",
     ctaText: "Keep us on",
-    ctaHref: "#contact",
+    ctaHref: "https://cal.com/sanaf-suhail/discoverycall",
     features: [
       "A team that already knows your product",
       "New features, experiments and redesigns",
@@ -133,7 +133,7 @@ export default function ProcessSection() {
                     </span>
 
                     <Link
-                      href="#contact"
+                      href="https://cal.com/sanaf-suhail/discoverycall"
                       className="inline-flex items-center justify-center bg-[#2563eb] text-white text-xs font-medium px-5 py-2  transition-colors"
                     >
                       Book a call
@@ -195,7 +195,7 @@ export default function ProcessSection() {
                     </span>
 
                     <Link
-                      href="#contact"
+                      href="https://cal.com/sanaf-suhail/discoverycall"
                       className="inline-flex items-center justify-center bg-[#2563eb] text-white text-xs font-medium px-5 py-2 transition-colors"
                     >
                       Start a build
@@ -273,7 +273,7 @@ export default function ProcessSection() {
                     </span>
 
                     <Link
-                      href="#contact"
+                      href="https://cal.com/sanaf-suhail/discoverycall"
                       className="inline-flex items-center justify-center bg-[#2563eb] text-white text-xs font-medium px-5 py-2 transition-colors"
                     >
                       Keep us on

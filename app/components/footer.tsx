@@ -58,7 +58,7 @@ export default function Footer() {
           <div className="flex items-center gap-3.5 sm:gap-4 shrink-0">
             {/* Gradient border pill: SEND A BRIEF */}
             <Link
-              href="#contact"
+              href="https://cal.com/sanaf-suhail/discoverycall"
               className="group inline-flex items-center justify-center  px-6 py-2.5 text-xs font-mono font-semibold tracking-wider text-neutral-900 bg-white border border-transparent shadow-sm transition-all duration-200 hover:shadow active:scale-95 [background:linear-gradient(white,white)_padding-box,linear-gradient(to_right,#f97316,#3b82f6)_border-box]"
             >
               BOOK A CALL
@@ -157,8 +157,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#contact"
-                  onClick={(e) => handleScrollTo(e, "#contact")}
+                  href="https://cal.com/sanaf-suhail/discoverycall"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="transition-colors hover:text-black"
                 >
                   Contact
@@ -175,15 +176,15 @@ export default function Footer() {
             <ul className="space-y-3.5 text-sm font-medium text-neutral-800">
               <li>
                 <Link
-                  href="mailto:hello@twocents.studio"
+                  href="mailto:sanaf@zerofrictionlab.com"
                   className="transition-colors hover:text-black"
                 >
-                  hello@zfl.com
+                  sanaf@zerofrictionlab.com
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#contact"
+                  href="https://cal.com/sanaf-suhail/discoverycall"
                   className="transition-colors hover:text-black"
                 >
                   Book a 15-min call
@@ -256,7 +257,7 @@ export default function Footer() {
 
             {/* Email Icon Box */}
             <Link
-              href="mailto:hello@twocents.studio"
+              href="mailto:sanaf@zerofrictionlab.com"
               aria-label="Email"
               className="flex h-7 w-7 items-center justify-center  bg-black text-white transition-opacity hover:opacity-85"
             >

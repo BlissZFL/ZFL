@@ -72,7 +72,7 @@ export default function FAQSection() {
 
               {/* Email Badge */}
               <Link
-                href="mailto:hello@zfl.com"
+                href="mailto:sanaf@zerofrictionlab.com"
                 className="inline-flex items-center gap-2 bg-black text-white px-3.5 py-2 text-xs font-mono font-medium transition-opacity hover:opacity-90 shadow-sm"
               >
                 {/* Envelope Icon */}
@@ -82,7 +82,7 @@ export default function FAQSection() {
                 >
                   <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l9.518 7.713 9.518-7.713v11.817h-19.036z" />
                 </svg>
-                <span>hello@zfl.com</span>
+                <span>sanaf@zerofrictionlab.com</span>
               </Link>
             </div>
           </div>
