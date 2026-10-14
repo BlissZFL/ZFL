@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { systemsData, allSystemsList } from "../systems-data";
@@ -38,19 +39,65 @@ export async function generateStaticParams() {
   ];
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const system = systemsData[slug];
 
   if (!system) {
     return {
-      title: "System Not Found — ZeroFrictionLab",
+      title: "System Not Found",
+      description: "The requested system was not found on Zero Friction Lab.",
+      robots: {
+        index: false,
+        follow: true,
+      },
     };
   }
 
+  const title = `${system.name} — ${system.category}`;
+  const description = `${system.hero} ${system.problem}`;
+  const canonicalUrl = `/systems/${system.slug}`;
+
   return {
-    title: `${system.name} — ${system.category} | ZeroFrictionLab`,
-    description: system.hero,
+    title,
+    description,
+    keywords: [
+      system.name,
+      system.category,
+      "Zero Friction Lab",
+      "ZFL",
+      "AI Automation",
+      "Business Intelligence Systems",
+      ...system.audience,
+    ],
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `${system.name} — ${system.category} | Zero Friction Lab`,
+      description,
+      url: canonicalUrl,
+      type: "article",
+      siteName: "Zero Friction Lab",
+      images: [
+        {
+          url: "/zflfav.svg",
+          width: 500,
+          height: 500,
+          alt: `${system.name} — Zero Friction Lab`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${system.name} — ${system.category} | Zero Friction Lab`,
+      description,
+      images: ["/zflfav.svg"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 

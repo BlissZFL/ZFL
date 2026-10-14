@@ -99,7 +99,7 @@ export default function Navbar({
       } ${className}`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-12">
-        {/* Left: Logo using zflblack.svg */}
+        {/* Left: Logo using zflnav.svg */}
         <Link
           href="/"
           onClick={(e) => {
@@ -115,15 +115,13 @@ export default function Navbar({
           }}
           className="group flex items-center transition-opacity"
         >
-          <div className="relative h-9 w-28 sm:h-10 sm:w-32">
+          <div className="relative h-8 w-12 sm:h-9 sm:w-14">
             <Image
-              src="/zflblack.svg"
+              src={isLight ? "/zflnav.svg" : "/zflnav-white.svg"}
               alt="ZFL Logo"
               fill
               priority
-              className={`object-contain object-left ${
-                isLight ? "" : "brightness-0 invert"
-              }`}
+              className="object-contain object-left"
             />
           </div>
         </Link>

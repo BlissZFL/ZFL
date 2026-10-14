@@ -198,17 +198,16 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-6 sm:gap-8">
             <Link
               href="/"
-              className="flex items-center gap-2 text-neutral-900 transition-opacity"
+              className="flex items-center text-neutral-900 transition-opacity hover:opacity-80"
             >
-              <div className="relative h-6 w-16">
+              <div className="relative h-6 sm:h-7 w-48 sm:w-56">
                 <Image
-                  src="/zflblack.svg"
-                  alt="Two Cents Logo"
+                  src="/Group 6.svg"
+                  alt="Zero Friction Lab Logo"
                   fill
                   className="object-contain object-left"
                 />
               </div>
-              
             </Link>
 
             <nav className="flex items-center gap-6 text-neutral-600">
