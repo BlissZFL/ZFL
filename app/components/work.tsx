@@ -44,12 +44,13 @@ export default function WorkSection() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16 sm:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-neutral-900 leading-[1.12]">
-            Shipped, Live, Still Running.
+            Shipped, live, still running. 
+
           </h2>
 
           <p className="mt-4 text-xs sm:text-sm text-neutral-500 font-normal leading-relaxed max-w-md">
-            Products, sites and brands we&apos;ve designed and launched. Hover a
-            card to scroll the real thing.
+            Sites and systems we've designed, built, and kept running. Hover a card to see the real thing. 
+
           </p>
         </div>
 

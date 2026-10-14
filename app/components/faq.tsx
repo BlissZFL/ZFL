@@ -10,29 +10,39 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "Are you a design studio or a dev shop?",
+    question: "Do you only build websites, or also AI automation?",
     answer:
-      "We're both, by design. Most agencies hand off Figma files to developers who don't understand the vision, or build code without product thinking. We design the user experience, architecture, and write production-ready code in-house as a unified sprint.",
+      "Both, same team. Most clients start with one and add the other once they've seen how we work.",
   },
   {
-    question: "What can you design and build?",
+    question: "How is this different from a typical agency?",
     answer:
-      "Full web applications, MVP SaaS products, complex internal dashboards, pitch decks, responsive design systems, and automated AI workflow pipelines. If it lives on the web and needs to perform under scale, we build it.",
+      'Most agencies template a site, or call a chatbot "AI automation." We custom-code every site and build systems that handle real operational work - from research to reporting - not human conversations.',
   },
   {
-    question: "How fast can we launch?",
+    question: "Do you build the AI systems yourselves?",
     answer:
-      "Our average sprint cycle is 14 to 21 days from kickoff to functional production deployment. We cut out weeks of bureaucracy by working in rapid 48-hour prototype cycles with direct founder communication.",
+      "We scope, design, and manage every system end to end. Delivery runs through our technical partner network, so you get senior-level work without carrying an in-house AI team.",
   },
   {
-    question: "Can you help us raise?",
+    question: "How fast can we launch a website?",
     answer:
-      "Yes. We design high-converting interactive investor prototypes, pitch collateral, and live sandboxes that have helped our clients raise over $120M in venture funding.",
+      "Most custom sites ship in 2–4 weeks from kickoff. You see the full design before we write a line of code.",
+  },
+  {
+    question: "How fast can a system go live?",
+    answer:
+      "Depends on complexity — most go live within a couple of weeks of the audit.",
+  },
+  {
+    question: "What does it cost?",
+    answer:
+      "Every project is scoped and quoted after the audit. No flat packages — no two businesses lose time the same way.",
   },
   {
     question: "What happens after launch?",
     answer:
-      "We don't disappear after deploy. We stay on as your fractional product and technical partner, managing performance monitoring, iterative feature releases, and infrastructure scaling as your user base grows.",
+      "We don't disappear. Websites get support and updates. Systems get monitored and adjusted as your data and business change.",
   },
 ];
 

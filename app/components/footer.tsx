@@ -40,33 +40,10 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="w-full bg-white text-neutral-900 pt-16 pb-12 px-6 sm:px-10 lg:px-16 selection:bg-black selection:text-white border-t border-neutral-100 scroll-mt-20"
+      className="w-full bg-white text-neutral-900 pt-10 pb-12 px-6 sm:px-10 lg:px-16 selection:bg-black selection:text-white scroll-mt-20"
     >
       <div className="mx-auto max-w-7xl">
-        {/* Top Header Row: Value Proposition & Action CTAs */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-12">
-          <div className="max-w-xl">
-            <h3 className="text-base sm:text-lg font-semibold tracking-tight text-neutral-900">
-              Design-first MVPs, launched in weeks.
-            </h3>
-            <p className="mt-1 text-sm text-neutral-500 font-normal leading-relaxed">
-              UX, product design, pitch decks and the build, from one studio that
-              stays on as your tech partner.
-            </p>
-          </div>
-
-          <div className="flex items-center gap-3.5 sm:gap-4 shrink-0">
-            {/* Gradient border pill: SEND A BRIEF */}
-            <Link
-              href="https://cal.com/sanaf-suhail/discoverycall"
-              className="group inline-flex items-center justify-center  px-6 py-2.5 text-xs font-mono font-semibold tracking-wider text-neutral-900 bg-white border border-transparent shadow-sm transition-all duration-200 hover:shadow active:scale-95 [background:linear-gradient(white,white)_padding-box,linear-gradient(to_right,#f97316,#3b82f6)_border-box]"
-            >
-              BOOK A CALL
-            </Link>
-
-            
-          </div>
-        </div>
+        
 
         {/* Top Divider */}
         <div className="w-full border-t border-neutral-200/80" />
@@ -79,44 +56,44 @@ export default function Footer() {
               SERVICES
             </h4>
             <ul className="space-y-3.5 text-sm font-medium text-neutral-800">
-              <li>
+              <li className="flex items-center gap-2">
+                <span className="text-[8px] text-neutral-400">●</span>
                 <Link
                   href="#services"
+                  onClick={(e) => handleScrollTo(e, "#services")}
                   className="transition-colors hover:text-black"
                 >
-                  Product &amp; UX Design
+                  Website Design &amp; Development
                 </Link>
               </li>
-              <li>
+              <li className="flex items-center gap-2">
+                <span className="text-[8px] text-neutral-400">●</span>
                 <Link
                   href="#services"
+                  onClick={(e) => handleScrollTo(e, "#services")}
                   className="transition-colors hover:text-black"
                 >
-                  Onboarding &amp; User Flows
+                  Conversion-Focused Web Design
                 </Link>
               </li>
-              <li>
+              <li className="flex items-center gap-2">
+                <span className="text-[8px] text-neutral-400">●</span>
                 <Link
                   href="#services"
+                  onClick={(e) => handleScrollTo(e, "#services")}
                   className="transition-colors hover:text-black"
                 >
-                  Pitch Decks &amp; Brand
+                  AI Automation &amp; Systems
                 </Link>
               </li>
-              <li>
+              <li className="flex items-center gap-2">
+                <span className="text-[8px] text-neutral-400">●</span>
                 <Link
                   href="#services"
+                  onClick={(e) => handleScrollTo(e, "#services")}
                   className="transition-colors hover:text-black"
                 >
-                  MVPs That Launch
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#services"
-                  className="transition-colors hover:text-black"
-                >
-                  Tech Partnership
+                  Lead &amp; Reporting Automation
                 </Link>
               </li>
             </ul>
@@ -128,42 +105,41 @@ export default function Footer() {
               STUDIO
             </h4>
             <ul className="space-y-3.5 text-sm font-medium text-neutral-800">
-              <li>
-                <Link
-                  href="#work"
-                  onClick={(e) => handleScrollTo(e, "#work")}
-                  className="transition-colors hover:text-black"
-                >
-                  Work
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#process"
-                  onClick={(e) => handleScrollTo(e, "#process")}
-                  className="transition-colors hover:text-black"
-                >
-                  Process
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#faq"
-                  onClick={(e) => handleScrollTo(e, "#faq")}
-                  className="transition-colors hover:text-black"
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://cal.com/sanaf-suhail/discoverycall"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-black"
-                >
-                  Contact
-                </Link>
+              <li className="flex items-center gap-2">
+                <span className="text-[8px] text-neutral-400">●</span>
+                <div className="flex flex-wrap items-center gap-2">
+                  <Link
+                    href="#work"
+                    onClick={(e) => handleScrollTo(e, "#work")}
+                    className="transition-colors hover:text-black"
+                  >
+                    Work
+                  </Link>
+                  <span className="text-neutral-400">·</span>
+                  <Link
+                    href="#process"
+                    onClick={(e) => handleScrollTo(e, "#process")}
+                    className="transition-colors hover:text-black"
+                  >
+                    Process
+                  </Link>
+                  <span className="text-neutral-400">·</span>
+                  <Link
+                    href="#faq"
+                    onClick={(e) => handleScrollTo(e, "#faq")}
+                    className="transition-colors hover:text-black"
+                  >
+                    FAQ
+                  </Link>
+                  <span className="text-neutral-400">·</span>
+                  <Link
+                    href="#contact"
+                    onClick={(e) => handleScrollTo(e, "#contact")}
+                    className="transition-colors hover:text-black"
+                  >
+                    Contact
+                  </Link>
+                </div>
               </li>
             </ul>
           </div>
@@ -174,7 +150,8 @@ export default function Footer() {
               GET IN TOUCH
             </h4>
             <ul className="space-y-3.5 text-sm font-medium text-neutral-800">
-              <li>
+              <li className="flex items-center gap-2">
+                <span className="text-[8px] text-neutral-400">●</span>
                 <Link
                   href="mailto:sanaf@zerofrictionlab.com"
                   className="transition-colors hover:text-black"
@@ -182,15 +159,19 @@ export default function Footer() {
                   sanaf@zerofrictionlab.com
                 </Link>
               </li>
-              <li>
+              <li className="flex items-center gap-2">
+                <span className="text-[8px] text-neutral-400">●</span>
                 <Link
                   href="https://cal.com/sanaf-suhail/discoverycall"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="transition-colors hover:text-black"
                 >
                   Book a 15-min call
                 </Link>
               </li>
-              <li>
+              <li className="flex items-center gap-2">
+                <span className="text-[8px] text-neutral-400">●</span>
                 <Link
                   href="https://instagram.com"
                   target="_blank"

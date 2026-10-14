@@ -14,11 +14,9 @@ import CalendlySection from "./calendly";
 import Footer from "./footer";
 
 const servicesList = [
-  "/ UI/UX & PRODUCT DESIGN",
-  "/ CUSTOM WEB DEVELOPMENT",
-  "/ AI & WORKFLOW AUTOMATION",
-  "/ CRM & GROWTH SYSTEMS",
-  "/ YOUR PARTNER FROM IDEA TO SCALE",
+  "/ Website Design & Development ",
+  "/ AI Automation & Systems",
+  
 ];
 
 export default function HeroSection() {
@@ -121,12 +119,13 @@ export default function HeroSection() {
             <div className="flex flex-col items-start lg:col-span-7">
               {/* Main Headline */}
               <h1 className="max-w-xl text-4xl font-normal tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl leading-[1.08]">
-                Your vision, designed and built without friction.
+                Websites that convert. AI systems that saves time. 
               </h1>
 
               {/* Subtitle / Description */}
               <p className="mt-6 max-w-lg text-sm sm:text-base font-light leading-relaxed text-neutral-300/95">
-                We design seamless digital experiences, build custom-coded websites and products, and automate the work that slows you down. From first idea to launch and beyond, we turn complexity into momentum.
+                Conversion-focused websites that speak for your brand. AI systems that save time, cut 
+busywork, and get better results, without you managing it. 
               </p>
 
               {/* CTA Buttons */}
@@ -135,14 +134,14 @@ export default function HeroSection() {
                   href="https://cal.com/sanaf-suhail/discoverycall"
                   className="group inline-flex items-center gap-2 bg-white px-6 py-3 text-sm font-medium text-black shadow-lg transition-all duration-200 active:scale-95"
                 >
-                  <span>Book a 15-min call</span>
+                  <span>Book a Call</span>
                 </Link>
 
                 <Link
                   href="#work"
                   className="inline-flex items-center border border-white/20 bg-neutral-900/80 px-6 py-3 text-sm font-medium text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:border-white/35 active:scale-95"
                 >
-                  Explore our work
+                  See our work
                 </Link>
               </div>
             </div>
