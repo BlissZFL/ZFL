@@ -9,13 +9,17 @@ export default function Footer() {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    if (href.startsWith("#")) {
+    const whiteContainer = document.getElementById("white-homepage-container");
+    const targetId = href.replace("/#", "").replace("#", "");
+    const targetElement = document.getElementById(targetId);
+
+    // If on subpage and target element is not on current page, allow normal link navigation
+    if (!targetElement && !whiteContainer) {
+      return;
+    }
+
+    if (href.includes("#")) {
       e.preventDefault();
-      const targetId = href.replace("#", "");
-      const targetElement = document.getElementById(targetId);
-      const whiteContainer = document.getElementById(
-        "white-homepage-container"
-      );
 
       if (targetElement && whiteContainer) {
         const containerRect = whiteContainer.getBoundingClientRect();
@@ -32,7 +36,7 @@ export default function Footer() {
       }
 
       if (typeof window !== "undefined") {
-        window.history.pushState(null, "", href);
+        window.history.pushState(null, "", `#${targetId}`);
       }
     }
   };

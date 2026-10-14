@@ -10,10 +10,10 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
-  { label: "Process", href: "#process" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Services", href: "/#services" },
+  { label: "Work", href: "/#work" },
+  { label: "Process", href: "/#process" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 interface NavbarProps {
@@ -34,13 +34,20 @@ export default function Navbar({
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    if (href.startsWith("#")) {
+    const heroContainer = document.getElementById("doorway-hero-container");
+    const whiteContainer = document.getElementById("white-homepage-container");
+
+    // If on a subpage, let Next.js Link navigate normally to /#section
+    if (!heroContainer && !whiteContainer) {
+      setMobileMenuOpen(false);
+      return;
+    }
+
+    if (href.includes("#")) {
       e.preventDefault();
       setMobileMenuOpen(false);
 
-      const targetId = href.replace("#", "");
-      const heroContainer = document.getElementById("doorway-hero-container");
-      const whiteContainer = document.getElementById("white-homepage-container");
+      const targetId = href.split("#")[1];
 
       // 1. If currently at the top hero doorway (not scrolled down to white homepage yet)
       if (heroContainer) {
@@ -77,7 +84,7 @@ export default function Navbar({
       setTimeout(scrollToTarget, 650);
 
       if (typeof window !== "undefined") {
-        window.history.pushState(null, "", href);
+        window.history.pushState(null, "", `#${targetId}`);
       }
     }
   };

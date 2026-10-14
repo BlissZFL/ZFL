@@ -78,8 +78,8 @@ export default function HeroSection() {
           }}
         >
           <Image
-            src="/hero-door-walk-poster.jpg"
-            alt="Hero Glowing Portal Doorway"
+            src="/Solitary Figure Before the Monolith.png"
+            alt="Solitary Figure Before the Monolith"
             fill
             priority
             quality={95}
